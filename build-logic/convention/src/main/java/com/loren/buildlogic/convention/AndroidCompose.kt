@@ -36,11 +36,11 @@ internal fun Project.configureAndroidCompose(
             add("implementation", libs.findLibrary("androidx-compose-material3").get())
             add("implementation", libs.findLibrary("androidx-hilt-navigation-compose").get())
             add("implementation", libs.findLibrary("androidx-navigation-compose").get())
-            add("implementation", libs.findLibrary("androidx-lifecycle-runtimeCompose").get())
+            add("implementation", libs.findLibrary("androidx-lifecycle-runtime-compose").get())
             add("androidTestImplementation", platform(bom))
             add("androidTestImplementation", libs.findLibrary("androidx-compose-ui-test").get())
             add("debugImplementation", libs.findLibrary("androidx-compose-ui-tooling").get())
-            add("debugImplementation", libs.findLibrary("androidx-compose-ui-testManifest").get())
+            add("debugImplementation", libs.findLibrary("androidx-compose-ui-test-manifest").get())
         }
     }
 

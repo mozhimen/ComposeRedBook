@@ -49,7 +49,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.activity.compose)
 
     implementation(libs.androidx.hilt.navigation.compose)
@@ -69,5 +69,5 @@ dependencies {
     implementation(libs.coil.compose)
 
     implementation(libs.gson)
-    implementation(libs.androidx.animation)
+    implementation(libs.androidx.compose.animation)
 }

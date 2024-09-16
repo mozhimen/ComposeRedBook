@@ -24,5 +24,5 @@ dependencies {
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.gson)
-    implementation(libs.androidx.animation)
+    implementation(libs.androidx.compose.animation)
 }

@@ -18,5 +18,5 @@ android {
 
 dependencies {
     implementation(libs.androidx.paging.compose)
-    implementation(libs.androidx.animation)
+    implementation(libs.androidx.compose.animation)
 }

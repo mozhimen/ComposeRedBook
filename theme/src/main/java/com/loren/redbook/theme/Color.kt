@@ -18,7 +18,7 @@ val BlackWindow = Color(0xFF111111)
 val BlackBackground = Color(0xFF1F1D1D)
 
 @Immutable
-data class LorenColors(
+data class LorenColors constructor(
     val theme: Color,
     val window: Color,
     val background: Color,
