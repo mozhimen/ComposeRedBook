@@ -320,6 +320,7 @@ private fun RefreshContent(
         SubcomposeLayout(
             modifier = Modifier
                 .fillMaxSize()
+                .background(Color.Cyan)
         ) { constraints ->
             val functionBar = subcompose("functionBar") {
                 MeFunctionBar(
@@ -343,30 +344,30 @@ private fun RefreshContent(
             }.first().measure(constraints.copy(minHeight = 0, maxHeight = Constraints.Infinity))
             state.contentBarHeight = contentBar.height
 
-            val backgroundImage = subcompose("backgroundImage") {
-                AsyncImage(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .graphicsLayer {
-                            translationY = -refreshState.indicatorOffset
-                        },
-                    model = R.drawable.pic_vitality,
-                    contentDescription = "background",
-                    contentScale = ContentScale.Crop,
-                )
-            }.first().measure(
-                constraints.copy(
-                    minHeight = (state.contentBarHeight + refreshState.indicatorOffset.coerceAtLeast(0f)).toInt(),
-                    maxHeight = Constraints.Infinity
-                )
-            )
+//            val backgroundImage = subcompose("backgroundImage") {
+//                AsyncImage(
+//                    modifier = Modifier
+//                        .fillMaxSize()
+//                        .graphicsLayer {
+//                            translationY = -refreshState.indicatorOffset
+//                        },
+//                    model = R.drawable.pic_vitality,
+//                    contentDescription = "background",
+//                    contentScale = ContentScale.Crop,
+//                )
+//            }.first().measure(
+//                constraints.copy(
+//                    minHeight = (state.contentBarHeight + refreshState.indicatorOffset.coerceAtLeast(0f)).toInt(),
+//                    maxHeight = Constraints.Infinity
+//                )
+//            )
 
             val viewPager = subcompose("viewPager") {
                 MeViewPager(state, refreshState, isSearchMode, selectedIndex, updateSelected, navigateToContentDetail)
             }.first().measure(constraints.copy(minHeight = 0, maxHeight = constraints.maxHeight - topBarHeight - functionBar.height))
 
             layout(constraints.maxWidth, constraints.maxHeight) {
-                backgroundImage.placeRelative(0, state.offset.toInt().coerceAtMost(0))
+//                backgroundImage.placeRelative(0, state.offset.toInt().coerceAtMost(0))
                 contentBar.placeRelative(0, state.offset.toInt())
                 functionBar.placeRelative(0, contentBar.height - functionBar.height + state.offset.toInt())
                 viewPager.placeRelative(0, contentBar.height + state.offset.toInt())
